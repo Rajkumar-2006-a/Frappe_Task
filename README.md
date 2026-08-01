@@ -16,8 +16,8 @@
 
 ## Hook Task
 
-1. Create an `api.py` file in your custom app.
-2. Add a `before_save` hook function in `api.py`.
+1. Created an `api.py` file in your custom app.
+2. Added a `before_save` hook function in `api.py`.
 3. Configure the hook in `hooks.py`.
 4. Restart the bench and test the hook by saving a **Test Document**.
 
