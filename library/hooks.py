@@ -36,3 +36,8 @@ standard_portal_menu_items = [
 ]
 
 
+doc_events={
+    "Test_Document":{
+        "validate":"library.api.validate"
+    }
+}

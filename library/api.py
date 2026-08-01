@@ -8,3 +8,5 @@ def create_session(login_manager):
 def logout_user(login_manager):
     frappe.logger().info(f"{login_manager.user} logged out")
     
+def validate(self,method):
+    frappe.msgprint("Hook Executed")
