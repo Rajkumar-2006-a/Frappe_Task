@@ -1,33 +1,26 @@
-### library
+## Controller Task
 
-a library management
+1. Create a new DocType named **Test Document**.
+2. Add a **Description** field (Data or Text).
+3. Open the auto-generated Python controller file:
+   - `test_document.py`
+4. Add a `before_save(self)` method to the controller.
+5. If `self.description` is empty, set it to `"Default Description"`.
+6. Save the file and test the DocType.
 
-### Installation
+### Output
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+<img width="755" height="450" alt="Controller Output" src="https://github.com/user-attachments/assets/1f44f178-4f48-4c3c-ac43-02120b6a043e" />
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch version-16
-bench install-app library
-```
+---
 
-### Contributing
+## Hook Task
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+1. Create an `api.py` file in your custom app.
+2. Add a `before_save` hook function in `api.py`.
+3. Configure the hook in `hooks.py`.
+4. Restart the bench and test the hook by saving a **Test Document**.
 
-```bash
-cd apps/library
-pre-commit install
-```
+### Output
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### License
-
-mit
+<img width="951" height="549" alt="Hook Output" src="https://github.com/user-attachments/assets/0ba1b764-7b06-4eec-a0cf-d63e272c663a" />
