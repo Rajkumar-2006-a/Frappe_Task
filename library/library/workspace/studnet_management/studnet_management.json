@@ -1,0 +1,119 @@
+{
+ "app": "library",
+ "charts": [
+  {
+   "chart_name": "Students by Department",
+   "label": "Grouping by dep"
+  },
+  {
+   "chart_name": "course_time_series",
+   "label": "Pie_chart"
+  },
+  {
+   "chart_name": "course_fee_sum_bar",
+   "label": "Bar_graph"
+  }
+ ],
+ "content": "[{\"id\":\"AHnoDYh5-R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Studnet Management workspace</span>\",\"col\":12}},{\"id\":\"z8Wl5nZ72J\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"IuNaPje7oT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student_Doc\",\"col\":3}},{\"id\":\"iKnst2IMM9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"AopitODrPR\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"t_5cdSkNLi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Count Card</b></span>\",\"col\":12}},{\"id\":\"z-OU-wAhKj\",\"type\":\"card\",\"data\":{\"card_name\":\"Card\",\"col\":4}},{\"id\":\"AhM-2J1i3d\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Student_count\",\"col\":4}},{\"id\":\"FarKWcvDV1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"frappe_Documentation\",\"col\":3}},{\"id\":\"RMro5AQyJq\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"X8FEY5ex2t\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Pie_chart\",\"col\":6}},{\"id\":\"wQGsAb7jjW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Grouping by dep\",\"col\":6}},{\"id\":\"3cT6LJ4pAk\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Bar_graph\",\"col\":12}},{\"id\":\"_Qn2QKsceI\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Custom Block</b></span>\",\"col\":12}},{\"id\":\"qQt1LHxH_8\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Custom_card\",\"col\":12}}]",
+ "creation": "2026-07-21 15:01:17.221756",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Custom_card",
+   "label": "Custom_card"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "raj,arun",
+ "hide_custom": 0,
+ "icon": "activity",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Studnet Management",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Card",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student",
+   "link_count": 0,
+   "link_to": "Student",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "course",
+   "link_count": 0,
+   "link_to": "Course",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Admission",
+   "link_count": 0,
+   "link_to": "Admission",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-21 23:12:24.986324",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Studnet Management",
+ "number_cards": [
+  {
+   "label": "Student_count",
+   "number_card_name": "student_count"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "Studnet Management",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "frappe_Documentation",
+   "type": "URL",
+   "url": "https://docs.frappe.io/framework/user/en/basics/users-and-permissions"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Student_Doc",
+   "link_to": "Student",
+   "stats_filter": "[[\"Student\",\"name\",\"=\",\"Stud-001\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Course",
+   "link_to": "Course",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Studnet Management",
+ "type": "Workspace"
+}
