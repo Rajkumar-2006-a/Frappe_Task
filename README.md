@@ -24,3 +24,9 @@
 ### Output
 
 <img width="951" height="549" alt="Hook Output" src="https://github.com/user-attachments/assets/0ba1b764-7b06-4eec-a0cf-d63e272c663a" />
+
+
+#### Assignment: python-api-documentation Assignment
+<img width="790" height="708" alt="Screenshot 2026-08-07 164903" src="https://github.com/user-attachments/assets/57125b3a-a211-4f7c-8542-c80c54388575" />
+
+1.Created a 'whitelist' method in 'library.api.query'
