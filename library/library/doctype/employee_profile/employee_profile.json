@@ -1,21 +1,19 @@
 {
  "actions": [],
- "allow_auto_repeat": 1,
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "DES-.###",
- "creation": "2026-08-01 11:35:05.886727",
+ "autoname": "field:name1",
+ "creation": "2026-08-01 18:06:46.433374",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_teak",
+  "section_break_dp2j",
   "amended_from",
-  "description",
-  "image"
+  "name1"
  ],
  "fields": [
   {
-   "fieldname": "section_break_teak",
+   "fieldname": "section_break_dp2j",
    "fieldtype": "Section Break"
   },
   {
@@ -23,31 +21,27 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Test_Document",
+   "options": "Employee_profile",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "description",
+   "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Description"
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach",
-   "label": "Image"
+   "label": "name",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-06 18:51:29.844967",
+ "modified": "2026-08-01 18:07:23.688301",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Test_Document",
- "naming_rule": "Expression",
+ "name": "Employee_profile",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

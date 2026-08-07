@@ -19,8 +19,9 @@ class Vitual_testing(Document):
     # end: auto-generated types
 
     
+    
     def full_name(self):
-        return f"{self.firstname or ''} {self.lastname or ''}".strip()
+        return f"{self.firstname} {self.lastname}"
     
     def validate(self):
         if self.age<18:

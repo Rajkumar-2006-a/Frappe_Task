@@ -1,52 +1,47 @@
 {
  "actions": [],
- "allow_auto_repeat": 1,
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "DES-.###",
- "creation": "2026-08-01 11:35:05.886727",
+ "autoname": "CUS-.###",
+ "creation": "2026-08-07 14:47:29.733404",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_teak",
-  "amended_from",
-  "description",
-  "image"
+  "customer_name",
+  "courses",
+  "year",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "section_break_teak",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
+   "fieldname": "courses",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Test_Document",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Courses",
+   "options": "Course"
   },
   {
-   "fieldname": "description",
+   "fieldname": "year",
    "fieldtype": "Data",
-   "label": "Description"
+   "label": "Year"
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach",
-   "label": "Image"
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "customer_name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-08-06 18:51:29.844967",
+ "modified": "2026-08-07 16:03:58.678083",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Test_Document",
+ "name": "Customer",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -60,13 +55,14 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_name"
 }

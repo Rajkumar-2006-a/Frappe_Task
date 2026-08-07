@@ -2,6 +2,10 @@ def update_context(context):
     print("Hook Executed")
     context.company = "ABC Library"
     context.year = 2026
+
+
+
+
 import frappe
 
 def resolve_path(path):

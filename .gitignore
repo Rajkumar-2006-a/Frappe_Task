@@ -35,6 +35,7 @@ venv.bak/
 # Dependency directories
 node_modules/
 jspm_packages/
+library/public/node_modules/
 
 # IDEs and editors
 .vscode/
@@ -58,3 +59,5 @@ public/node_modules
 sites/assets/frappe
 node_modules/
 node_modules/
+library/public/node_modules/
+public/node_modules/

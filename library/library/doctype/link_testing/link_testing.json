@@ -2,36 +2,34 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "Course-.###",
- "creation": "2026-08-07 14:41:33.425187",
+ "creation": "2026-08-04 15:46:37.969503",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer_name",
-  "course_name"
+  "link",
+  "dynamic_link"
  ],
  "fields": [
   {
-   "fieldname": "course_name",
-   "fieldtype": "Data",
-   "label": "Course_name",
-   "options": "Name"
+   "fieldname": "link",
+   "fieldtype": "Link",
+   "label": "Link",
+   "options": "DocType"
   },
   {
-   "fieldname": "customer_name",
-   "fieldtype": "Link",
-   "label": "Name",
-   "options": "Customer"
+   "fieldname": "dynamic_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Dynamic link",
+   "options": "link"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-07 15:33:52.201404",
+ "modified": "2026-08-04 15:48:27.905864",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Course",
- "naming_rule": "Expression",
+ "name": "Link_testing",
  "owner": "Administrator",
  "permissions": [
   {
@@ -49,9 +47,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "title_field": "course_name"
+ "states": []
 }
