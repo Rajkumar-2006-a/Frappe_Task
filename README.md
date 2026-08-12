@@ -30,3 +30,7 @@
 <img width="790" height="708" alt="Screenshot 2026-08-07 164903" src="https://github.com/user-attachments/assets/57125b3a-a211-4f7c-8542-c80c54388575" />
 
 1.Created a 'whitelist' method in 'library.api.query'
+
+#### Background Jobs
+1.Created a file in `library/task.py`
+<img width="1864" height="927" alt="Screenshot 2026-08-12 185836" src="https://github.com/user-attachments/assets/5be3d2eb-cc18-4057-a840-795caa0efdd2" />
