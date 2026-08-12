@@ -123,3 +123,10 @@ additional_timeline_content={
 
 brand_html = '<div><img src="assets/library/images/VJ.jpg ">TN</div>'
 app_logo_url="assets/library/images/VJ.jpg"
+# notification_config = "library.api.get_config"
+
+
+# task
+scheduler_events={
+    "daily":["library.task.do_something"]
+}

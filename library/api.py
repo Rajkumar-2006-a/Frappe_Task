@@ -1,5 +1,6 @@
 import frappe
-
+import time
+from frappe.query_builder import DocType
 def user_logged_in(login_manager):
     frappe.logger().info(f"{login_manager.user} logged in")
 
@@ -21,7 +22,8 @@ def custom_get_count(doctype, filters=None, debug=False, cache=False):
 @frappe.whitelist()
 def hello():
     print(frappe.form_dict)
-    return "OK"
+    return "The whitelist executed"
+
 def boot_info(bootinfo):
     bootinfo.name="RAji"
     
@@ -33,8 +35,6 @@ def write_file():
 
 def get_sender_details():
     return "Raj", "rajkumar.cs23@bitsathy.ac.in"
-import frappe
-
 def timeline(doctype, docname):
 
     doc = frappe.get_doc(doctype, docname)
@@ -92,4 +92,21 @@ def query():
         "result": result
     }
   
+
+@frappe.whitelist()
+def show_member_details():
+    time.sleep(3)
+    frappe.msgprint("3 seconds completed")
+    return "hello"
+@frappe.whitelist()
+def testing():
+    doc=frappe.qb.DocType("Library Member")
+    query=(frappe.qb.from_(doc).select(doc.member_name).where(
+        (doc.member_name=="Rajkumar")&
+        (doc.email=="rajkumar.cs23@bitsathy.ac.in")
+        )
+    )
+    result=query.run()
   
+    return result
+    
