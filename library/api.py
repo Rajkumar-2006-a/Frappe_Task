@@ -110,3 +110,16 @@ def testing():
   
     return result
     
+@frappe.whitelist()
+def task_todo():
+    doc=frappe.get_list("Library Member",fields=["name","member_name"],order_by="member_name asc",limit=5)
+    record=[]
+    for i in doc:
+        email=frappe.db.get_value("Library Member",i.name,"email")
+        dic={
+            "name":i.member_name,
+            "email":email,
+            "time":frappe.utils.now()
+        }
+        record.append(dic)
+    return record

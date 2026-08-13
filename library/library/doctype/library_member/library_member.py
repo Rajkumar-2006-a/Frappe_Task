@@ -36,7 +36,7 @@ class LibraryMember(Document):
                 "email":self.email
             }
         }
-    )
+        )
     def do_something(self, param):
         print(f"Student: {self.name}")
         print(f"Parameter: {param}")
