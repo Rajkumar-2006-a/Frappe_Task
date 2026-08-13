@@ -8,3 +8,6 @@ def report(param):
         print(f"Processing {i}/6")
         time.sleep(5)
     print("completed")
+    
+def cron_testing():
+    frappe.log_error("The cron testing da")

@@ -128,5 +128,8 @@ app_logo_url="assets/library/images/VJ.jpg"
 
 # task
 scheduler_events={
-    "daily":["library.task.do_something"]
+    "daily":["library.task.daily_maintenance"],
+    "cron":{
+        "* * * * *":["library.background.cron_testing"]
+    }
 }
