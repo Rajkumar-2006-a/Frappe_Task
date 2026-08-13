@@ -33,4 +33,4 @@
 
 #### Background Jobs
 1.Created a file in `library/task.py`
-<img width="1864" height="927" alt="Screenshot 2026-08-12 185836" src="https://github.com/user-attachments/assets/5be3d2eb-cc18-4057-a840-795caa0efdd2" />
+<img width="1912" height="931" alt="Screenshot 2026-08-13 112329" src="https://github.com/user-attachments/assets/bf20f7e7-7d16-40a4-b71f-539866fd3bd7" />
