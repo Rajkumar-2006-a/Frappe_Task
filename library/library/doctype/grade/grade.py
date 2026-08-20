@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Customers(Document):
+class Grade(Document):
 	pass

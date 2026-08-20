@@ -2,41 +2,39 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "SUB-.##",
- "creation": "2026-07-22 16:07:52.814262",
+ "autoname": "TEMP-.###",
+ "creation": "2026-08-19 10:58:33.705566",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "subject_code",
-  "subject_name",
-  "grade"
+  "temperature",
+  "timestamp",
+  "qr"
  ],
  "fields": [
   {
-   "fieldname": "subject_code",
-   "fieldtype": "Data",
-   "label": "Subject Code"
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature"
   },
   {
-   "fieldname": "subject_name",
-   "fieldtype": "Data",
-   "label": "Subject Name"
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "label": "Timestamp"
   },
   {
-   "fieldname": "grade",
-   "fieldtype": "Table",
-   "label": "Grade",
-   "options": "Grade"
+   "fieldname": "qr",
+   "fieldtype": "Data",
+   "label": "qr"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-14 11:44:14.641930",
+ "modified": "2026-08-19 14:05:51.381055",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Subjects",
+ "name": "Temperature",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

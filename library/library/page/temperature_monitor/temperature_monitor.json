@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2026-08-19 11:00:15.353023",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-08-19 11:05:02.954432",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "temperature-monitor",
+ "owner": "Administrator",
+ "page_name": "temperature-monitor",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Temperature Monitor"
+}

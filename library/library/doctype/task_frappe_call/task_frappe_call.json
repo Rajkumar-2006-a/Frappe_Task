@@ -2,41 +2,27 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "SUB-.##",
- "creation": "2026-07-22 16:07:52.814262",
+ "autoname": "Task-.##",
+ "creation": "2026-08-20 10:30:18.855197",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "subject_code",
-  "subject_name",
-  "grade"
+  "subject"
  ],
  "fields": [
   {
-   "fieldname": "subject_code",
+   "fieldname": "subject",
    "fieldtype": "Data",
-   "label": "Subject Code"
-  },
-  {
-   "fieldname": "subject_name",
-   "fieldtype": "Data",
-   "label": "Subject Name"
-  },
-  {
-   "fieldname": "grade",
-   "fieldtype": "Table",
-   "label": "Grade",
-   "options": "Grade"
+   "label": "Subject"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-14 11:44:14.641930",
+ "modified": "2026-08-20 11:50:34.902320",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Subjects",
+ "name": "Task_frappe_call",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

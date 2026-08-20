@@ -31,12 +31,12 @@ app_license = "mit"
 # on_session_creation = "library.api.create_session"
 # on_logout = "library.api.logout_user"
 
-# # website_route_rules = [
-# #     {
-# #         "from_route": "/books/<name>",
-# #         "to_route": "books/book"
-# #     }
-# # ]
+ # website_route_rules = [
+ #     {
+ #         "from_route": "/books/<name>",
+ #         "to_route": "books/book"
+ #     }
+ # ]
 
 
 # doc_events={
@@ -127,9 +127,9 @@ app_logo_url="assets/library/images/VJ.jpg"
 
 
 # task
-scheduler_events={
-    "daily":["library.task.daily_maintenance"],
-    "cron":{
-        "* * * * *":["library.background.cron_testing"]
-    }
-}
+# scheduler_events={
+#     "daily":["library.task.daily_maintenance"],
+#     "cron":{
+#         "* * * * *":["library.background.cron_testing"]
+#     }
+# }

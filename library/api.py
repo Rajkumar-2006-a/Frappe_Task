@@ -1,6 +1,8 @@
 import frappe
 import time
+import random
 from frappe.query_builder import DocType
+from frappe.utils.logger import set_log_level 
 def user_logged_in(login_manager):
     frappe.logger().info(f"{login_manager.user} logged in")
 
@@ -123,3 +125,38 @@ def task_todo():
         }
         record.append(dic)
     return record
+
+@frappe.whitelist()
+def send_temperature():
+    temperature = random.randint(20, 40)
+
+    data = {
+        "label": frappe.utils.now_datetime().strftime("%H:%M:%S"),
+        "points": [temperature]
+    }
+
+    frappe.publish_realtime("temperature_event", data)
+
+    return data
+@frappe.whitelist()
+def jax():
+    return {
+        "message":"hello"
+    }
+@frappe.whitelist()
+def logger():
+    log=frappe.logger("testing_logger")
+    log.debug("The debug is executed")
+    log.info("The debug is executed")
+    log.warning("The warning")
+    return "executed"
+@frappe.whitelist()
+def level(level):
+    set_log_level(level)
+    return f"Log level changed to {level}"
+@frappe.whitelist()
+def frappe_call(msg):
+    doc=frappe.new_doc("Task_frappe_call")
+    doc.subject=msg
+    doc.save()
+    return doc.name

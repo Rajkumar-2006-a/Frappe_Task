@@ -1,5 +1,5 @@
-// Copyright (c) 2026, raj and contributors
-// For license information, please see license.txt
-
-// frappe.treeview_settings["Hierachy"] = {
-// };
+frappe.treeview_settings["Hierachy"]={
+    breadcrum:"Hierachy",
+    title: "Chart of Accounts",
+    menu_items:["New items"]
+}

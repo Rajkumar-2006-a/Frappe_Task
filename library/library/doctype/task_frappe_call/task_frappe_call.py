@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Chil_doc(Document):
+class Task_frappe_call(Document):
 	pass
