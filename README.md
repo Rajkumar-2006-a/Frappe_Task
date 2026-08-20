@@ -38,5 +38,5 @@
 1.created a whitelist() method `task_todo` in api.py
 <img width="1111" height="721" alt="Screenshot 2026-08-13 144546" src="https://github.com/user-attachments/assets/3880cc45-14a0-4d14-9540-b0e652bca9b5" />
 ### js-frappecall Assignment
-Created a 'frappe_call` method in api.py
+Created a `frappe_call` method in api.py
 <img width="1531" height="797" alt="Screenshot 2026-08-20 120949" src="https://github.com/user-attachments/assets/f020a3eb-5a24-4088-a6ca-517ffedea646" />
