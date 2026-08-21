@@ -43,3 +43,4 @@ Created a `frappe_call` method in api.py
 ### Assignment: js-frappe-realtime Assignment
 1.library/library/doctype/js_frappe_realtime_assignment/js_frappe_realtime_assignment.js
 <img width="1593" height="896" alt="Screenshot 2026-08-20 171230" src="https://github.com/user-attachments/assets/22101698-55cf-4ee4-bf0e-8d0c45bb4eca" />
+### Commands Assignment<img width="1062" height="311" alt="Screenshot 2026-08-21 125323" src="https://github.com/user-attachments/assets/e8eaa2dc-b220-4ace-80fb-a8ec6dd4bb9a" />
