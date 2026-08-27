@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-26 19:07:06.660455",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+  "field_order": [
+  "customer_no",
+  "create",
+  "column_break_hbpa",
+  "customer_name",
+  "customer_address",
+  "section_break_hjoc",
+  "bill",
+  "section_break_wcsv",
+  "coupon_code",
+  "total_price",
+  "column_break_abty",
+  "amount",
+  "payable_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer_id.mobile",
+   "fieldname": "customer_no",
+   "fieldtype": "Data",
+   "label": "Customer No"
+  },
+  {
+   "fetch_from": "customer_id.city",
+   "fieldname": "customer_address",
+   "fieldtype": "Data",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "bill",
+   "fieldtype": "Table",
+   "label": "Bill",
+   "options": "Item_Table"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Int",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Int",
+   "label": "Total Price"
+  },
+  {
+   "fieldname": "coupon_code",
+   "fieldtype": "Data",
+   "label": "coupon code"
+  },
+  {
+   "fieldname": "create",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Create"
+  },
+  {
+   "fieldname": "column_break_hbpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hjoc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_wcsv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_abty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payable_amount",
+   "fieldtype": "Data",
+   "label": "Payable Amount"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-26 19:07:06.660455",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Make_Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

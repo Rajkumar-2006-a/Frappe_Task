@@ -2,46 +2,39 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "CUS-.###",
- "creation": "2026-08-07 14:47:29.733404",
+ "autoname": "CLI-.###",
+ "creation": "2026-08-25 10:31:28.156756",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "customer_name",
-  "courses",
-  "year",
-  "status"
+  "mobile",
+  "city"
  ],
  "fields": [
   {
-   "fieldname": "courses",
-   "fieldtype": "Link",
-   "label": "Courses",
-   "options": "Course"
-  },
-  {
-   "fieldname": "year",
-   "fieldtype": "Data",
-   "label": "Year"
-  },
-  {
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "customer_name"
+   "label": "Customer Name"
   },
   {
-   "fieldname": "status",
+   "fieldname": "mobile",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-25 18:57:23.131515",
+ "modified": "2026-08-25 18:57:06.735295",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Customer",
+ "name": "Client",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
