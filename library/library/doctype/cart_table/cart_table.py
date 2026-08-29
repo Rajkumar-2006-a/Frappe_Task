@@ -1,6 +1,6 @@
 import frappe
 from frappe.model.document import Document
-
+from frappe.utils import cint
 
 class Cart_Table(Document):
 
@@ -46,5 +46,20 @@ class Cart_Table(Document):
             cur.quantity+=i.quantity
             cur.save()
         print(sum)
+        
+    def validate(self):
+        self.set_payment_status()
 
+    def set_payment_status(self):
+        balance = cint(self.balance)
+        total = cint(self.total_price)
+
+        if balance == total:
+            self.status = "Pending"
+        elif balance == 0 and total > 0:
+            self.status = "Fully paid"  
+        elif 0 < balance < total:
+            self.status = "Partially Paid"
+        else:
+            self.status = "Pending"
         

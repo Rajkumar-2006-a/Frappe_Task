@@ -2,10 +2,11 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "PAY-.##",
  "creation": "2026-08-26 19:07:06.660455",
  "doctype": "DocType",
  "engine": "InnoDB",
-  "field_order": [
+ "field_order": [
   "customer_no",
   "create",
   "column_break_hbpa",
@@ -18,8 +19,11 @@
   "total_price",
   "column_break_abty",
   "amount",
-  "payable_amount",
-  "amended_from"
+  "balance",
+  "section_break_khhk",
+  "pay_method",
+  "column_break_bqsz",
+  "amount_to_be_paid"
  ],
  "fields": [
   {
@@ -49,17 +53,20 @@
   {
    "fieldname": "amount",
    "fieldtype": "Int",
-   "label": "Amount"
+   "label": "Amount",
+   "read_only": 1
   },
   {
    "fieldname": "total_price",
    "fieldtype": "Int",
-   "label": "Total Price"
+   "label": "Total Price",
+   "read_only": 1
   },
   {
    "fieldname": "coupon_code",
    "fieldtype": "Data",
-   "label": "coupon code"
+   "label": "coupon code",
+   "read_only": 1
   },
   {
    "fieldname": "create",
@@ -73,7 +80,8 @@
   },
   {
    "fieldname": "section_break_hjoc",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_wcsv",
@@ -84,18 +92,39 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "payable_amount",
-   "fieldtype": "Data",
-   "label": "Payable Amount"
+   "fieldname": "balance",
+   "fieldtype": "Int",
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_khhk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pay_method",
+   "fieldtype": "Select",
+   "label": "Pay Method",
+   "options": "UPI\nCredit Card\nDebit Card\nNet Banking"
+  },
+  {
+   "fieldname": "column_break_bqsz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_to_be_paid",
+   "fieldtype": "Int",
+   "label": "Amount To Be Paid"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-26 19:07:06.660455",
+ "modified": "2026-08-27 18:57:15.292230",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Make_Payment",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

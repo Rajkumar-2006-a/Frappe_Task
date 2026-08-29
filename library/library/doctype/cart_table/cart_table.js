@@ -21,20 +21,8 @@ frappe.ui.form.on("Item_Table",{
     }
 })
 frappe.ui.form.on("Cart_Table",{
-    refresh(frm)
-    {
-        if(frm.doc.docstatus==1)
-        {
-            frm.add_custom_button("Make Payment",()=>
-            {
-                frappe.call({
-                    method:"library.api.newdoc"
-                })
-                console.log("The payment is successful")
-            })
-        }
-
-    },
+    
+    
     coupon_code(frm)
     {
         if(frm.doc.coupon_code.length==7)
@@ -43,6 +31,7 @@ frappe.ui.form.on("Cart_Table",{
         }
         else{
             frm.set_value("amount",frm.doc.total_price)
+            frm.set_value("balance",frm.doc.total_price)
         }
     },
     customer_no(frm)
@@ -61,16 +50,14 @@ frappe.ui.form.on("Cart_Table",{
                 record_creator(frm)
               return;
             }
-            console.log(r)
-            console.log(r[0].mobile)
-            console.log(r[0].customer_name)
-            console.log(r[0].city)
+        
             frm.set_value('customer_name',r[0].customer_name)
             frm.set_value('customer_address',r[0].city)
 
         })
         }
-    }
+    },
+
 })
 function calculate(frm)
 {
@@ -93,7 +80,7 @@ function calculate(frm)
     // {
       //frm.set_value('total_price',tot)
      frm.set_value('amount',tot)
-     frm.set_value('payable_amount',tot)
+     frm.set_value('balance',tot)
     // }
 }
 function coupon(frm)
@@ -105,9 +92,10 @@ function coupon(frm)
       let row =frm.doc.bill[i];
       tot+=row.bill_price;
     }
-    console.log(frm.doc.coupon_code)
-    console.log(tot)
-    
+   
+    frappe.db.exists("Coupon",frm.doc.coupon_code).then(r=>{
+    if(r)
+    {
     frappe.db.get_doc("Coupon",frm.doc.coupon_code).then(r=>{
         if(r.active)
         {
@@ -117,22 +105,34 @@ function coupon(frm)
                   console.log(dis)
                   frappe.show_alert("Discount applied")
                   frm.set_value('amount',dis)
-                  frm.set_value('payable_amount',dis)
+                  frm.set_value('balance',dis)
              } 
-             else
+             else if(tot<r.minimum_price)
              {
                 frappe.show_alert("The minimum amount is "+ r.minimum_price)
                 frm.set_value("coupon_code",'')
+             }
+             else
+             {
+                frappe.show_alert("Invalid coupon code")
+                 frm.set_value("coupon_code",'')
              }
         }
         else
         {
             frappe.show_alert("The coupon is expired")
+            frm.set_value("balance",frm.doc.total_price)
             frm.set_value("coupon_code",'')
         }
 
     })
-        
+     }
+     else
+     {
+        frappe.show_alert("Invalid coupon");
+         frm.set_value("coupon_code",'')
+     }
+    })
 }
 function stock_update(row) {
 
@@ -203,101 +203,116 @@ frappe.ui.form.on("Cart_Table",{
 })
 }
 
-// frappe.ui.form.on("Cart_Table", {
-//     refresh(frm) {
-//         frm.set_df_property("bill", "cannot_add_rows", true);
+frappe.ui.form.on("Cart_Table", {
+    refresh(frm) {
+        //frm.set_df_property("bill", "cannot_add_rows", true);
 
-//         frm.add_custom_button(__("Add Items"), () => {
-//             frappe.db.get_list("Product", {
-//                 fields: ["name", "product_name", "quantity", "price"],
-//                 filters: { quantity: [">", 0] },
-//                 limit: 100
-//             }).then(products => 
-//                 {
-//                 let d = new frappe.ui.Dialog({
-//                     title: "Select Items",
-//                     fields: [{ fieldname: "item_table", fieldtype: "HTML" }],
-//                     primary_action_label:"Add Items",
-//                     primary_action() {
-//                         let selected = false;
+        frm.add_custom_button(__("Add Items"), () => {
+            frappe.db.get_list("Product", {
+                fields: ["name", "product_name", "quantity", "price"],
+                filters: { quantity: [">", 0] },
+                limit: 100
+            }).then(products => 
+                {
+                let d = new frappe.ui.Dialog({
+                    title: "Select Items",
+                    fields: [{ fieldname: "item_table", fieldtype: "HTML" }],
+                    primary_action_label:"Add Items",
+                    primary_action() {
+                        let selected = false;
 
-//                         d.$wrapper.find(".product-check:checked").each(function () {
-//                             let idx = $(this).data("index");
-//                             let product = products[idx];
-//                             let req_qty = flt(d.$wrapper.find(`.product-qty[data-index="${idx}"]`).val());
+                        d.$wrapper.find(".product-check:checked").each(function () {
+                            let idx = $(this).data("index");
+                            let product = products[idx];
+                            let req_qty = flt(d.$wrapper.find(`.product-qty[data-index="${idx}"]`).val());
 
-//                             if (req_qty <= 0 || req_qty > product.quantity) {
-//                                 frappe.msgprint(__('Invalid quantity for {0}', [product.product_name]));
-//                                 return;
-//                             }
+                            if (req_qty <= 0 || req_qty > product.quantity) {
+                                frappe.msgprint(__('Invalid quantity for {0}', [product.product_name]));
+                                return;
+                            }
 
-//                             selected = true;
-//                             let existing_row = (frm.doc.bill || []).find(r => r.product_id === product.name);
+                            selected = true;
+                            let existing_row = (frm.doc.bill || []).find(r => r.product_id === product.name);
 
-//                             if (existing_row) {
-//                                 let total_qty = flt(existing_row.quantity) + req_qty;
-//                                 frappe.model.set_value(existing_row.doctype, existing_row.name, {
-//                                     quantity: total_qty,
-//                                     bill_price: total_qty * flt(existing_row.price)
-//                                 });
-//                             } else {
-//                                 let row = frm.add_child("bill", {
-//                                     product_id: product.name,
-//                                     product_name: product.product_name,
-//                                     price: product.price,
-//                                     quantity: req_qty,
-//                                     bill_price: req_qty * flt(product.price)
-//                                 });
-//                                   d.hide();
-//                             }
-//                         });
+                            if (existing_row) {
+                                let total_qty = flt(existing_row.quantity) + req_qty;
+                                frappe.model.set_value(existing_row.doctype, existing_row.name, {
+                                    quantity: total_qty,
+                                    bill_price: total_qty * flt(existing_row.price)
+                                });
+                            } else {
+                                let row = frm.add_child("bill", {
+                                    product_id: product.name,
+                                    product_name: product.product_name,
+                                    price: product.price,
+                                    quantity: req_qty,
+                                    bill_price: req_qty * flt(product.price)
+                                });
+                                  
+                            }
+                        });
 
-//                         if (!selected) {
-//                             frappe.msgprint(__("Please select at least one valid product."));
-//                             return;
-//                         }
+                        if (!selected) {
+                            frappe.msgprint(__("Please select at least one valid product."));
+                            return;
+                        }
 
-//                         frm.refresh_field("bill");
-//                         calculate(frm);
-                      
-//                     }
-//                 });
+                        frm.refresh_field("bill");
+                        calculate(frm);
+                        d.hide();
+                    }
+                });
 
-//                 let table_rows = products.map((p, idx) => `
-//                     <tr>
-//                         <td><input type="checkbox" class="product-check" data-index="${idx}"></td>
-//                         <td>${p.name}</td>
-//                         <td>${p.product_name}</td>
-//                         <td>${p.price}</td>
-//                         <td>${p.quantity}</td>
-//                         <td>
-//                             <input type="number" class="form-control product-qty" data-index="${idx}" value="1" min="1" max="${p.quantity}">
-//                         </td>
-//                     </tr>
-//                 `).join("");
+                let table_rows = products.map((p, idx) => `
+                    <tr>
+                        <td><input type="checkbox" class="product-check" data-index="${idx}"></td>
+                        <td>${p.name}</td>
+                        <td>${p.product_name}</td>
+                        <td>${p.price}</td>
+                        <td>${p.quantity}</td>
+                        <td>
+                            <input type="number" class="form-control product-qty" data-index="${idx}" value="3" min="1" max="${p.quantity}">
+                        </td>
+                    </tr>
+                `).join("");
 
-//                 d.fields_dict.item_table.$wrapper.html(`
-//                     <div style="max-height: 350px; overflow-y: auto;">
-//                         <table class="table table-bordered table-condensed">
-//                             <thead>
-//                                 <tr>
-//                                     <th></th>
-//                                     <th>${'ID'}</th>
-//                                     <th>${'Name'}</th>
-//                                     <th>${'Price'}</th>
-//                                     <th>${'Available'}</th>
-//                                     <th style="width: 100px;">${'Qty'}</th>
-//                                 </tr>
-//                             </thead>
-//                             <tbody>${table_rows}</tbody>
-//                         </table>
-//                     </div>
-//                 `);
+                d.fields_dict.item_table.$wrapper.html(`
+                    <div style="max-height: 350px; overflow-y: auto;">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>${'ID'}</th>
+                                    <th>${'Name'}</th>
+                                    <th>${'Price'}</th>
+                                    <th>${'Available'}</th>
+                                    <th style="width: 100px;">${'Qty'}</th>
+                                </tr>
+                            </thead>
+                            <tbody>${table_rows}</tbody>
+                        </table>
+                    </div>
+                `);
 
-//                 d.show();
-//             });
-//         });
-//     },
+                d.show();
+            });
+        });
+        if(frm.doc.balance>0 )
+        {
+            frm.add_custom_button("Make Payment",()=>
+            {
+            doc=frappe.new_doc("Make_Payment",{
+            "customer_no":frm.doc.customer_no
+            })
+            console.log("The payment is successful")
+            })
+             if(frm.doc.status=='Fully Paid')
+            {
+                frm.remove_custom_button('Make Payment');
+            }
+        }
+
+    },
 
 
-// });
+});

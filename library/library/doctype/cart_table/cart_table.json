@@ -17,10 +17,11 @@
   "section_break_wcsv",
   "coupon_code",
   "total_price",
-  "column_break_abty",
   "amount",
-  "payable_amount",
-  "amended_from"
+  "column_break_abty",
+  "balance",
+  "amended_from",
+  "status"
  ],
  "fields": [
   {
@@ -50,12 +51,14 @@
   {
    "fieldname": "amount",
    "fieldtype": "Int",
-   "label": "Amount"
+   "label": "Amount",
+   "read_only": 1
   },
   {
    "fieldname": "total_price",
    "fieldtype": "Int",
-   "label": "Total Price"
+   "label": "Total Price",
+   "read_only": 1
   },
   {
    "fieldname": "coupon_code",
@@ -85,11 +88,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "payable_amount",
-   "fieldtype": "Data",
-   "label": "Payable Amount"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -98,13 +96,29 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "balance",
+   "fieldtype": "Int",
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Fully paid\nPartially Paid\nPending",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-26 18:36:18.253514",
+ "modified": "2026-08-27 19:07:22.956031",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Cart_Table",
