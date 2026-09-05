@@ -1,42 +1,49 @@
 {
  "actions": [],
  "allow_bulk_edit": 1,
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "COP-.###",
- "creation": "2026-08-25 18:07:18.759172",
+ "autoname": "SHOP_ORDER-.##",
+ "creation": "2026-09-03 10:42:06.654583",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "minimum_price",
-  "percentage",
-  "active"
+  "customer",
+  "order_date",
+  "order_status",
+  "items"
  ],
  "fields": [
   {
-   "fieldname": "percentage",
-   "fieldtype": "Int",
-   "label": "Percentage"
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "customer",
+   "options": "Shop Customer"
   },
   {
-   "fieldname": "minimum_price",
-   "fieldtype": "Int",
-   "label": "Minimun Price"
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "order_date"
   },
   {
-   "default": "0",
-   "fieldname": "active",
-   "fieldtype": "Check",
-   "label": "Active"
+   "fieldname": "order_status",
+   "fieldtype": "Select",
+   "label": "order_status",
+   "options": "Draft\nCompleted\nCancelled\nReturned"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "items",
+   "options": "shop_order_item"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-29 16:28:13.043893",
+ "modified": "2026-09-03 10:44:33.726564",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Coupon",
+ "name": "Shop Order",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
+ "creation": "2026-09-05 11:48:02.026606",
+ "description": "Please Create a Data it is empty now",
+ "doctype": "DocType",
+ "documentation": "https://docs.frappe.io/framework/user/en/introduction",
+ "engine": "InnoDB",
+ "field_order": [
+  "check_box",
+  "user",
+  "auto_complete",
+  "attach",
+  "button",
+  "code",
+  "percent",
+  "text",
+  "muli_select_table",
+  "link",
+  "dy",
+  "naming_series",
+  "tab_2_tab",
+  "name1"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "check_box",
+   "fieldtype": "Check",
+   "label": "Check box"
+  },
+  {
+   "fieldname": "auto_complete",
+   "fieldtype": "Autocomplete",
+   "label": "Auto complete",
+   "options": "user\nRajkumar"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "button",
+   "fieldtype": "Button",
+   "label": "Button"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Code",
+   "label": "Code"
+  },
+  {
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "label": "Percent"
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Text",
+   "label": "Text"
+  },
+  {
+   "fieldname": "muli_select_table",
+   "fieldtype": "Table MultiSelect",
+   "label": "Muli select table",
+   "options": "multiselect_bridge"
+  },
+  {
+   "columns": 3,
+   "description": "hello this is discription",
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details 2",
+   "max_height": "250px",
+   "options": "Hello ",
+   "show_dashboard": 1,
+   "width": "900px"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name "
+  },
+  {
+   "alignment": "Right",
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "user",
+   "search_index": 1,
+   "width": "80px"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Link",
+   "label": "Link",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "dy",
+   "fieldtype": "Dynamic Link",
+   "label": "dy",
+   "options": "link"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "naming"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2026-09-05 14:13:11.795240",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Fields_practice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "read_only": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

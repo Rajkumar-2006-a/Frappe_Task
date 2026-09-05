@@ -1,42 +1,35 @@
 {
  "actions": [],
  "allow_bulk_edit": 1,
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "COP-.###",
- "creation": "2026-08-25 18:07:18.759172",
+ "autoname": "SHOP_CUS-.##",
+ "creation": "2026-09-03 10:39:39.317572",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "minimum_price",
-  "percentage",
-  "active"
+  "customer_name",
+  "country"
  ],
  "fields": [
   {
-   "fieldname": "percentage",
-   "fieldtype": "Int",
-   "label": "Percentage"
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "customer_name",
+   "unique": 1
   },
   {
-   "fieldname": "minimum_price",
-   "fieldtype": "Int",
-   "label": "Minimun Price"
-  },
-  {
-   "default": "0",
-   "fieldname": "active",
-   "fieldtype": "Check",
-   "label": "Active"
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "country"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-29 16:28:13.043893",
+ "modified": "2026-09-03 12:56:40.078974",
  "modified_by": "Administrator",
  "module": "library",
- "name": "Coupon",
+ "name": "Shop Customer",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -55,7 +48,9 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_name"
 }

@@ -22,7 +22,10 @@ frappe.ui.form.on("Item_Table",{
 })
 frappe.ui.form.on("Cart_Table",{
     
-    
+    total_price(frm)
+    {
+    coupon(frm)
+    },
     coupon_code(frm)
     {
         if(frm.doc.coupon_code.length==7)
@@ -50,11 +53,19 @@ frappe.ui.form.on("Cart_Table",{
                 record_creator(frm)
               return;
             }
-        
+          
             frm.set_value('customer_name',r[0].customer_name)
             frm.set_value('customer_address',r[0].city)
 
         })
+        }
+        else
+        {
+          
+             frm.set_df_property('create', 'hidden', 1);
+             frm.set_value('customer_name','')
+            frm.set_value('customer_address','')
+    
         }
     },
 
@@ -175,6 +186,7 @@ frappe.ui.form.on("Cart_Table",{
             fieldname:"cus_mobile",
             label:"Mobile Number"
            }],
+    
            primary_action_label:"Create",
            primary_action(values)
            {
@@ -199,6 +211,8 @@ frappe.ui.form.on("Cart_Table",{
            }
         })
         d.show()
+        d.set_df_property("cus_mobile","read_only",1)
+        d.set_value("cus_mobile",frm.doc.customer_no)
     }
 })
 }
@@ -216,84 +230,89 @@ frappe.ui.form.on("Cart_Table", {
                 {
                 let d = new frappe.ui.Dialog({
                     title: "Select Items",
-                    fields: [{ fieldname: "item_table", fieldtype: "HTML" }],
+                    fields: [{ fieldname: "item_table", fieldtype: "Table" }],
                     primary_action_label:"Add Items",
-                    primary_action() {
-                        let selected = false;
-
-                        d.$wrapper.find(".product-check:checked").each(function () {
-                            let idx = $(this).data("index");
-                            let product = products[idx];
-                            let req_qty = flt(d.$wrapper.find(`.product-qty[data-index="${idx}"]`).val());
-
-                            if (req_qty <= 0 || req_qty > product.quantity) {
-                                frappe.msgprint(__('Invalid quantity for {0}', [product.product_name]));
-                                return;
-                            }
-
-                            selected = true;
-                            let existing_row = (frm.doc.bill || []).find(r => r.product_id === product.name);
-
-                            if (existing_row) {
-                                let total_qty = flt(existing_row.quantity) + req_qty;
-                                frappe.model.set_value(existing_row.doctype, existing_row.name, {
-                                    quantity: total_qty,
-                                    bill_price: total_qty * flt(existing_row.price)
-                                });
-                            } else {
-                                let row = frm.add_child("bill", {
-                                    product_id: product.name,
-                                    product_name: product.product_name,
-                                    price: product.price,
-                                    quantity: req_qty,
-                                    bill_price: req_qty * flt(product.price)
-                                });
-                                  
-                            }
-                        });
-
-                        if (!selected) {
-                            frappe.msgprint(__("Please select at least one valid product."));
-                            return;
-                        }
-
-                        frm.refresh_field("bill");
-                        calculate(frm);
-                        d.hide();
+                    primary_action()
+                    {
+                        console.log("Hello")
+                        d.show()
                     }
+                    // primary_action() {
+                    //     let selected = false;
+
+                    //     d.$wrapper.find(".product-check:checked").each(function () {
+                    //         let idx = $(this).data("index");
+                    //         let product = products[idx];
+                    //         let req_qty = flt(d.$wrapper.find(`.product-qty[data-index="${idx}"]`).val());
+
+                    //         if (req_qty <= 0 || req_qty > product.quantity) {
+                    //             frappe.msgprint(__('Invalid quantity for {0}', [product.product_name]));
+                    //             return;
+                    //         }
+
+                    //         selected = true;
+                    //         let existing_row = (frm.doc.bill || []).find(r => r.product_id === product.name);
+
+                    //         if (existing_row) {
+                    //             let total_qty = flt(existing_row.quantity) + req_qty;
+                    //             frappe.model.set_value(existing_row.doctype, existing_row.name, {
+                    //                 quantity: total_qty,
+                    //                 bill_price: total_qty * flt(existing_row.price)
+                    //             });
+                    //         } else {
+                    //             let row = frm.add_child("bill", {
+                    //                 product_id: product.name,
+                    //                 product_name: product.product_name,
+                    //                 price: product.price,
+                    //                 quantity: req_qty,
+                    //                 bill_price: req_qty * flt(product.price)
+                    //             });
+                                  
+                    //         }
+                    //     });
+
+                    //     if (!selected) {
+                    //         frappe.msgprint(__("Please select at least one valid product."));
+                    //         return;
+                    //     }
+
+                    //     frm.refresh_field("bill");
+                    //     calculate(frm);
+                    //     d.hide();
+                    // }
                 });
 
-                let table_rows = products.map((p, idx) => `
-                    <tr>
-                        <td><input type="checkbox" class="product-check" data-index="${idx}"></td>
-                        <td>${p.name}</td>
-                        <td>${p.product_name}</td>
-                        <td>${p.price}</td>
-                        <td>${p.quantity}</td>
-                        <td>
-                            <input type="number" class="form-control product-qty" data-index="${idx}" value="3" min="1" max="${p.quantity}">
-                        </td>
-                    </tr>
-                `).join("");
+                // let table_rows = products.map((p, idx) => `
+                //     <tr>
+                //         <td><input type="checkbox" class="product-check" data-index="${idx}"></td>
+                //         <td>${p.name}</td>
+                //         <td>${p.product_name}</td>
+                //         <td>${p.price}</td>
+                //         <td>${p.quantity}</td>
+                //         <td>
+                //             <input type="number" class="form-control product-qty" data-index="${idx}" value="3" min="1" max="${p.quantity}">
+                //         </td>
+                //     </tr>
+                // `).join("");
 
-                d.fields_dict.item_table.$wrapper.html(`
-                    <div style="max-height: 350px; overflow-y: auto;">
-                        <table class="table table-bordered table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>${'ID'}</th>
-                                    <th>${'Name'}</th>
-                                    <th>${'Price'}</th>
-                                    <th>${'Available'}</th>
-                                    <th style="width: 100px;">${'Qty'}</th>
-                                </tr>
-                            </thead>
-                            <tbody>${table_rows}</tbody>
-                        </table>
-                    </div>
-                `);
-
+                // d.fields_dict.item_table.$wrapper.html(`
+                //     <div style="max-height: 350px; overflow-y: auto;">
+                //         <table class="table table-bordered table-condensed">
+                //             <thead>
+                //                 <tr>
+                //                     <th></th>
+                //                     <th>${'ID'}</th>
+                //                     <th>${'Name'}</th>
+                //                     <th>${'Price'}</th>
+                //                     <th>${'Available'}</th>
+                //                     <th style="width: 100px;">${'Qty'}</th>
+                //                 </tr>
+                //             </thead>
+                //             <tbody>${table_rows}</tbody>
+                //         </table>
+                //     </div>
+                // `);
+                
                 d.show();
             });
         });
