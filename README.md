@@ -44,7 +44,7 @@ Created a `frappe_call` method in api.py
 1.library/library/doctype/js_frappe_realtime_assignment/js_frappe_realtime_assignment.js
 <img width="1593" height="896" alt="Screenshot 2026-08-20 171230" src="https://github.com/user-attachments/assets/22101698-55cf-4ee4-bf0e-8d0c45bb4eca" />
 ### Commands Assignment<img width="1062" height="311" alt="Screenshot 2026-08-21 125323" src="https://github.com/user-attachments/assets/e8eaa2dc-b220-4ace-80fb-a8ec6dd4bb9a" />
-###Print format Task
+### Print format Task
 <img width="957" height="672" alt="Screenshot 2026-09-07 135749" src="https://github.com/user-attachments/assets/31eb4a49-c912-48e7-b120-4086c339a4d1" />
 <img width="1232" height="852" alt="Screenshot 2026-09-07 135925" src="https://github.com/user-attachments/assets/3d1e7cf3-34b7-4754-9b84-59c7e2800535" />
 
