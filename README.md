@@ -49,5 +49,10 @@ Created a `frappe_call` method in api.py
 <img width="1232" height="852" alt="Screenshot 2026-09-07 135925" src="https://github.com/user-attachments/assets/3d1e7cf3-34b7-4754-9b84-59c7e2800535" />
 ### Report print format
 <img width="1396" height="765" alt="Screenshot 2026-09-07 142714" src="https://github.com/user-attachments/assets/f99e9a07-4b45-4ebb-aa2d-a9dd09dff526" />
+### reports-and-printing-query Assignment
+
+<img width="477" height="747" alt="Screenshot 2026-09-07 134655" src="https://github.com/user-attachments/assets/aaf871e0-afce-46b2-89e3-8d19f13b8335" />
+<img width="1270" height="716" alt="Screenshot 2026-09-07 134733" src="https://github.com/user-attachments/assets/9f1e7b04-9495-4aca-bb11-a1797bd4bb21" />
+<img width="1331" height="821" alt="Screenshot 2026-09-07 150213" src="https://github.com/user-attachments/assets/b80030d8-2fec-41f2-ad7d-f6d835caef4f" />
 
 
