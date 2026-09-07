@@ -47,5 +47,7 @@ Created a `frappe_call` method in api.py
 ### Print format Task
 <img width="957" height="672" alt="Screenshot 2026-09-07 135749" src="https://github.com/user-attachments/assets/31eb4a49-c912-48e7-b120-4086c339a4d1" />
 <img width="1232" height="852" alt="Screenshot 2026-09-07 135925" src="https://github.com/user-attachments/assets/3d1e7cf3-34b7-4754-9b84-59c7e2800535" />
+## Report Built with html
+<img width="1396" height="765" alt="Screenshot 2026-09-07 142714" src="https://github.com/user-attachments/assets/f99e9a07-4b45-4ebb-aa2d-a9dd09dff526" />
 
 
