@@ -1,5 +1,11 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "app",
+   "action_type": "Route",
+   "label": "click"
+  }
+ ],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
  "autoname": "naming_series:naming_series",
@@ -9,8 +15,8 @@
  "documentation": "https://docs.frappe.io/framework/user/en/introduction",
  "engine": "InnoDB",
  "field_order": [
+  "details_1_tab",
   "check_box",
-  "user",
   "auto_complete",
   "attach",
   "button",
@@ -21,8 +27,13 @@
   "link",
   "dy",
   "naming_series",
+  "fetch_from",
+  "customer",
+  "address",
   "tab_2_tab",
-  "name1"
+  "htrrhyyj_section",
+  "name_2",
+  "dob"
  ],
  "fields": [
   {
@@ -32,10 +43,16 @@
    "label": "Check box"
   },
   {
+   "description": "desc",
+   "documentation_url": "https://chatgpt.com/c/6a9beafb-a884-83e9-8e1f-d8d0e50a73d4",
    "fieldname": "auto_complete",
    "fieldtype": "Autocomplete",
+   "in_list_view": 1,
    "label": "Auto complete",
-   "options": "user\nRajkumar"
+   "not_nullable": 1,
+   "options": "user\nRajkumar",
+   "placeholder": "hello",
+   "show_description_on_click": 1
   },
   {
    "fieldname": "attach",
@@ -60,6 +77,7 @@
   {
    "fieldname": "text",
    "fieldtype": "Text",
+   "in_list_view": 1,
    "label": "Text"
   },
   {
@@ -80,27 +98,17 @@
    "width": "900px"
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name "
-  },
-  {
-   "alignment": "Right",
-   "fieldname": "user",
-   "fieldtype": "Data",
-   "label": "user",
-   "search_index": 1,
-   "width": "80px"
-  },
-  {
    "fieldname": "link",
    "fieldtype": "Link",
    "label": "Link",
+   "not_nullable": 1,
    "options": "DocType"
   },
   {
    "fieldname": "dy",
    "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "dy",
    "options": "link"
   },
@@ -108,13 +116,52 @@
    "fieldname": "naming_series",
    "fieldtype": "Data",
    "label": "naming"
+  },
+  {
+   "fieldname": "fetch_from",
+   "fieldtype": "Link",
+   "label": "Fetch from",
+   "options": "Shop Customer"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "fetch_from.customer_name",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "customer",
+   "unique": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "dob"
+  },
+  {
+   "fieldname": "name_2",
+   "fieldtype": "Data",
+   "label": "Name_2"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "address"
+  },
+  {
+   "fieldname": "htrrhyyj_section",
+   "fieldtype": "Section Break",
+   "label": "htrrhyyj"
+  },
+  {
+   "fieldname": "details_1_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details 1"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2026-09-05 14:13:11.795240",
+ "modified": "2026-09-05 19:08:52.210507",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Fields_practice",

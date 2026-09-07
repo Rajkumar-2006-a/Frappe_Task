@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3><%= filters.customer ? filters.customer : "All Customers" %></h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>Product</th>
+            <th class="text-right">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (var i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= data[i].product_category %></td>
+                <td class="text-right"><%= format_money(data[i].unit_price) %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+</body>
+</html>

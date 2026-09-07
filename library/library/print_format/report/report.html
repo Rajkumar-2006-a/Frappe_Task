@@ -1,0 +1,21 @@
+<h3>{%= filters.customer ? filters.customer : "All Customers" %}</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for (var i = 0; i < data.length; i++) { %}
+            <tr>
+                <td>{%= i + 1 %}</td>
+                <td>{%= data[i].product_category %}</td>
+                <td>{%= data[i].unit_price %}</td>
+            </tr>
+        {% } %}
+    </tbody>
+</table>

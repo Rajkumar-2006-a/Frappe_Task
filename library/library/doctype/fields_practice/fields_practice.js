@@ -1,8 +1,7 @@
-// Copyright (c) 2026, raj and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Fields_practice", {
-// 	refresh(frm) {
-
-// 	},
-// });
+frappe.ui.form.on('Fields_practice', {
+    button(frm) {
+        frappe.msgprint(__('Button clicked! Performing client action...'));
+    
+    },
+ 
+});
