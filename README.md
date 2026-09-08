@@ -54,6 +54,8 @@ Created a `frappe_call` method in api.py
 <img width="477" height="747" alt="Screenshot 2026-09-07 134655" src="https://github.com/user-attachments/assets/aaf871e0-afce-46b2-89e3-8d19f13b8335" />
 <img width="1270" height="716" alt="Screenshot 2026-09-07 134733" src="https://github.com/user-attachments/assets/9f1e7b04-9495-4aca-bb11-a1797bd4bb21" />
 <img width="1331" height="821" alt="Screenshot 2026-09-07 150213" src="https://github.com/user-attachments/assets/b80030d8-2fec-41f2-ad7d-f6d835caef4f" />
+### Testing Task
+<img width="1916" height="510" alt="Screenshot 2026-09-08 171833" src="https://github.com/user-attachments/assets/62534ae6-34bf-44ff-b764-0e0c9eb0605b" />
 
 ### guides-1 Assignment
 <img width="1518" height="1022" alt="Screenshot 2026-09-08 134628" src="https://github.com/user-attachments/assets/18f2963e-b91c-42ce-a0b2-b2cd7ef4ba16" />
