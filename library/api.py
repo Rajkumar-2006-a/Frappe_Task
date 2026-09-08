@@ -166,3 +166,12 @@ def creator(user_name,user_city,user_mobile):
     doc=frappe.get_doc({"doctype":"Client","customer_name":user_name,"city":user_city,"mobile":user_mobile})
     doc.save()
     return "done"
+import frappe
+
+
+@frappe.whitelist(allow_guest=True,rate_limit=5)
+def limited_greeting():
+    logger = frappe.logger("Lms Task")
+    logger.info("Endpoint called.")
+    frappe.response["message"] = "Hello, Rate Limited World!"
+  
