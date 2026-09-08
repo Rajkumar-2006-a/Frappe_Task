@@ -96,8 +96,12 @@ extend_doctype_class = {
 
 
 
-fixtures=["Shop Order"]
-
+fixtures=[{
+    "dt":"Client Script",
+    "filters":[
+        ["dt","in",["User"]]
+    ]
+}]
 
 default_mail_footer = """
  <div>

@@ -158,11 +158,11 @@
   }
  ],
  "grid_page_length": 50,
- "icon": "heart",
+ "icon": "fa fa-book",
  "index_web_pages_for_search": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2026-09-07 17:12:48.828258",
+ "modified": "2026-09-08 15:11:27.143853",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Fields_practice",
