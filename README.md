@@ -60,4 +60,6 @@ Created a `frappe_call` method in api.py
 ### guides-1 Assignment
 <img width="1518" height="1022" alt="Screenshot 2026-09-08 134628" src="https://github.com/user-attachments/assets/18f2963e-b91c-42ce-a0b2-b2cd7ef4ba16" />
 
+### Assignment: others Assignment
+<img width="638" height="442" alt="Screenshot 2026-09-08 190220" src="https://github.com/user-attachments/assets/248fcab7-dc0b-4c9f-9a4a-db44ff19358e" />
 
