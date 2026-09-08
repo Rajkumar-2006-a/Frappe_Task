@@ -1,8 +1,11 @@
-// Copyright (c) 2026, raj and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Shop Order", {
-// 	refresh(frm) {
-
-// 	},
+// frappe.ui.form.on('Shop Order', {
+//     setup: function(frm) {
+//         frm.set_query('customer', function() {
+//             return {
+//                 filters: {
+//                     'country':'Singapore'
+//                 }
+//             };
+//         });
+//     }
 // });

@@ -154,9 +154,15 @@ def logger():
 def level(level):
     set_log_level(level)
     return f"Log level changed to {level}"
+
 @frappe.whitelist()
 def frappe_call(msg):
     doc=frappe.new_doc("Task_frappe_call")
     doc.subject=msg
     doc.save()
     return doc.name
+@frappe.whitelist()
+def creator(user_name,user_city,user_mobile):
+    doc=frappe.get_doc({"doctype":"Client","customer_name":user_name,"city":user_city,"mobile":user_mobile})
+    doc.save()
+    return "done"

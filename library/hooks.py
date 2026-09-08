@@ -96,7 +96,7 @@ extend_doctype_class = {
 
 
 
-fixtures=["Category"]
+fixtures=["Shop Order"]
 
 
 default_mail_footer = """
@@ -106,9 +106,9 @@ default_mail_footer = """
 <h2>Thank </h2>
 </div>
 """
-extend_bootinfo="library.api.boot_info"
-before_write_file="library.api.before_write"
-get_sender_details = "library.api.get_sender_details"
+# extend_bootinfo="library.api.boot_info"
+# before_write_file="library.api.before_write"
+# get_sender_details = "library.api.get_sender_details"
 # signup_form_template = "library/templates/custom_template.html"
 jinja = {
     "methods": [

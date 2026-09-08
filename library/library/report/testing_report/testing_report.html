@@ -1,0 +1,35 @@
+<div class="report-wrapper" style="padding: 15px;">
+    <!-- Report Title and Dynamic Filter Header -->
+    <div class="report-header" style="text-align: center; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 5px;"><%= __("Shop Orders Report") %></h3>
+        <% if (filters && filters.customer) { %>
+            <p class="text-muted" style="font-size: 13px;">
+                <%= __("Customer:") %> <%= filters.customer %>
+            </p>
+        <% } %>
+    </div>
+
+    <!-- Data Table -->
+    <table class="table table-bordered table-striped" style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 10%;"><%= __("Sr") %></th>
+                <th style="width: 40%;"><%= __("Customer") %></th>
+                <th style="width: 30%;"><%= __("Product Category") %></th>
+                <th style="width: 20%; text-align: right;"><%= __("Unit ") %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < data.length; i++) { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= data[i]["customer"] || "" %></td>
+                    <td><%= data[i]["product_category"] || "" %></td>
+                    <td style="text-align: right;">
+                        <%= format_money(data[i]["unit_price"] || 0) %>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
