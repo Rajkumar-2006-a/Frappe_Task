@@ -3,6 +3,8 @@ import time
 import random
 from frappe.query_builder import DocType
 from frappe.utils.logger import set_log_level 
+from frappe.rate_limiter import rate_limit
+
 def user_logged_in(login_manager):
     frappe.logger().info(f"{login_manager.user} logged in")
 
@@ -169,7 +171,8 @@ def creator(user_name,user_city,user_mobile):
 import frappe
 
 
-@frappe.whitelist(allow_guest=True,rate_limit=5)
+@frappe.whitelist(allow_guest=True)
+@rate_limit(limit=5)
 def limited_greeting():
     logger = frappe.logger("Lms Task")
     logger.info("Endpoint called.")
